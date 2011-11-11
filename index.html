@@ -6,12 +6,26 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
   <script src="lib/jquery.strath.criteriaeditor.js"></script>
   <script>
+
+    function autocomplete(request, callback) {
+        var url = "http://localhost/moodle/mod/strathcom/criteria2-proto/ajax.php?autocomplete=" + request.term;
+		$.ajax(url, {
+			method: 'GET',
+			success: callback,
+			dataType: 'json'
+		});
+    }
   
     $(document).ready(function() {
-    	$('textarea').criteriaeditor();
+    	var editor = $('textarea').criteriaeditor();
+
+    	editor.criteriaeditor('inputField').autocomplete({
+            source: autocomplete,
+                 position: {of: editor.criteriaeditor('containerDiv') }});
     });
 
    </script>
+   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css" type="text/css" />
 <link type="text/css" rel="stylesheet" media="all" href="lib/tagify-style.css" />
 <style type="text/css">
 	
