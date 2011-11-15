@@ -17,7 +17,7 @@
     }
   
     $(document).ready(function() {
-    	var editor = $('textarea').criteriaeditor();
+    	var editor = $('textarea').criteriaeditor({ajaxScript: 'http://localhost/moodle/mod/strathcom/criteria2-proto/ajax.php'});
 
     	editor.criteriaeditor('inputField').autocomplete({
             source: autocomplete,
@@ -28,7 +28,8 @@
    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css" type="text/css" />
 <link type="text/css" rel="stylesheet" media="all" href="lib/tagify-style.css" />
 <style type="text/css">
-	
+	.warning { color: red; font-weight: bold; padding: 0 3px; margin: 0 3px; border: 1px solid red; }
+	.strath-criterion { cursor: pointer; }
 </style>
 <title>Criteria selector prototype</title>
 </head>
