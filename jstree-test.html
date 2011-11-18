@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script
+	src="lib/jstree/jquery.jstree.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		var tree = $("#demo1").jstree({ 
+				"json_data" : {
+					"ajax" : {
+						"url" : "http://localhost/moodle/mod/strathcom/criteria2/ajax.php?coursegroups=234",
+						"data" : function (n) { 
+							return { id : n.attr ? n.attr("id") : 0 }; 
+						}
+					},
+
+					"progressive_render": true
+				},
+				"plugins" : [ "themes", "json_data", "checkbox", "sort", "ui" ]
+			});
+
+		tree.bind("loaded.jstree", function () {
+			$(this).jstree("check_all");
+		}); 
+	});
+</script>
+</head>
+<body>
+	<div id="demo1">
+		
+	</div>
+</body>
+</html>

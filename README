@@ -1,0 +1,22 @@
+Text representation of criteria:
+
+Registration number: 201101234
+- 11 digits, starting with '19' or '20'
+
+Username: vas07101 or cfis04
+- 3 letters, 5 digits
+- 4 letters, 2 digits
+
+Class (actually Moodle course): CH101
+- 2 capital letters, 3 digits
+- 1 capital letter, 4 digits
+- 5 digits
+
+Programme: 4981-1-2
+- 4 digits, 1 digit, 1 digit - dash-separated
+
+Group: CH101/Home Students
+- Course shortcode, slash, group name
+- Course shortcode, slash, grouping name, slash, group name
+
+Grouping: CH101/Tutorial Groups/*
